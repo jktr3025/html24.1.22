@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+        window.onload=function(){
+
+        //이벤트 연결
+        document.getElementById("myform").onsubmit = function(){
+            //변수연결
+            var pass = document.getElementById("pass").value;
+            var passCheck = document.getElementById("pass_check").value;
+            console.log(pass);
+            console.log(passCheck);
+
+            //비밀번호 같은지 확인
+            if(pass == passCheck){
+                alert("성공")
+            }else{
+                alert('비밀번호를 다시 확인해주세요')
+                return false;
+            }//if
+        }//onsubmit
+
+
+
+        }//onload
+    </script>
+</head>
+<body>
+    <h1 onclick="click_me()">click</h1>
+
+    <!-- <script lang="java">
+        function click_me(){
+            alert("클릭미")
+        }//
+    </script> -->
+
+    <form action="#" id="myform">
+        <label for="name">이름</label>
+        <input type="text" id="name" for="name"> <br>
+
+        <label for="pass">비밀번호</label>
+        <input type="password" id="pass" name="pass"> <br>
+
+        <label for="pass_check">비밀번호 확인</label>
+        <input type="password" id="pass_check" name="pass_check"> <br>
+
+        <input type="submit" value="제출">
+    </form>
+
+
+</body>
+</html>

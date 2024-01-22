@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+        window.onload = function(){
+            var buttonA = document.getElementById("buttonA");
+            var buttonB = document.getElementById("buttonB");
+            var countA = document.getElementById("countA");
+            var countB = document.getElementById("countB");
+
+            buttonA.onclick = function(){
+                countA.innerHTML = Number(countA.innerHTML) + 1;
+            }//onclick
+            
+            // countA.innerHTML는 문자이므로 숫자로 바꿔주는 Number을 같이 줘야
+            //+1이 적용된다
+
+            buttonB.onclick = function(){
+            countB.innerHTML = Number(countB.innerHTML) + 1;
+            }//onclick
+        }//onload
+    </script>
+</head>
+<body>
+    <button id="buttonA">buttonA</button>
+    <button id="buttonB">buttonB</button>
+    <h1> button A - <span id="countA">0</span> </h1>
+    <h1> button B - <span id="countB">0</span> </h1>
+</body>
+</html>

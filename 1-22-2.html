@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+        window.onload = function(){
+            document.getElementById("header").onclick = function(){
+                // alert(this);
+                this.style.color = "red";
+                this.style.backgroundColor = "beige";
+            }//onclick
+
+            document.getElementById("header1").onclick = function(e){
+                var event = e || window.event;
+                document.body.innerHTML = "";
+                for(var key in e){
+                    document.body.innerHTML += "§" + key +":" + e[key] + "<br>";
+                }//for
+            }//onclick
+
+        }//onload
+    </script>
+</head>
+<body>
+    <h1 id="header">header click</h1>
+    <h1 id="header1">click</h1>
+</body>
+</html>

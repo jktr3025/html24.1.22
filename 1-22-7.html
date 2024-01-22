@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+        
+        // window.attachEvent("onload", function(){
+        //     var header =  document.getElementById("header");
+        //     header.attachEvent("onclick", function(){alert("click")})
+        // })//익스플로러에서 이벤트 붙여주는 방법
+
+        // window.onload = function(){
+        //     var header =  document.getElementById("header");
+        //     var handler = function(){alert("click")};
+        //     header.attachEvent("onclick", handler);
+        //     header.detachEvent("onclick", handler);
+        // }
+        //익스플로러에서
+        //attachEvent 이벤트를 붙이는 명령어
+        //detachEvent 이벤트를 제거하는 명령어
+
+        window.onload = function(){
+            // var header =  document.getElementById("header");
+            // header.addEventListener("click", function(){
+            //     this.innerHTML += "＆";
+            // })
+
+            var header =  document.getElementById("header");
+            if(header.attachEvent){
+            //익스플로러의 경우 이벤트가 붙었니 물어보는 경우
+
+                var hander = function(){
+
+window.event.srcElement.style.color = "red";
+window.event.srcElement.detachEvent("onclick", hander);
+        };
+        header.attachEvent("onclick", hander);
+            }else{
+                //다른 인터넷 프로그램에 이벤트가 붙었니 물어보는 경우
+                var hander = function(){
+                    this.style.color = "red";
+                    this.removeEventListener("click", hander);
+                }
+            }
+            header.addEventListener("click", hander);
+
+           
+                
+
+
+
+        }//onload
+        //addEventListener: 익스플로러 외의 함수 붙이는 명령어
+    </script>
+</head>
+<body>
+    <h1 id="header">hello</h1>
+</body>
+</html>
